@@ -9,3 +9,7 @@
 * Delete counters
 * Reset values for all counters
 * Calculate how many counters are greater than zero
+## Libraries
+* React
+* Tailwind
+* Material-UI
