@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
-import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 class Counter extends Component {
-//   state = {
-//     value: this.props.counter.value,
-//   };
+  //   state = {
+  //     value: this.props.counter.value,
+  //   };
 
   // constructor() {
   //         super();
@@ -16,25 +16,34 @@ class Counter extends Component {
   // }
 
   // error function
-//   handleIncrement = () => {
-//     this.setState({ value: this.state.value + 1 });
-//   };
+  //   handleIncrement = () => {
+  //     this.setState({ value: this.state.value + 1 });
+  //   };
 
-//   handleDecrement = () => {
-//     this.setState({ value: this.state.value - 1 });
-//   };
+  //   handleDecrement = () => {
+  //     this.setState({ value: this.state.value - 1 });
+  //   };
 
   render() {
     return (
       <div class="m-10">
         <div>
-
-          <button
-            class="p-1 border border-gray-300 rounded-lg bg-gray-300 mr-5"
-            onClick={() => this.props.onDecrement(this.props.counter)}
-          >
-            <RemoveIcon />
-          </button>
+          <p class="mb-2">counter #{this.props.counter.id}</p>
+          {this.props.counter.value > 0 && (
+            <button
+              class="p-1 border border-gray-300 rounded-lg bg-gray-300 mr-5"
+              onClick={() => this.props.onDecrement(this.props.counter)}
+            >
+              <RemoveIcon />
+            </button>
+          )}
+          {this.props.counter.value === 0 && (
+            <button
+              class="p-1 border border-gray-300 rounded-lg bg-gray-500 mr-5" disabled
+            >
+              <RemoveIcon />
+            </button>
+          )}
 
           <span class={this.getCounterClasses()}>{this.formatCount()}</span>
 
